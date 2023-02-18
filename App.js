@@ -9,26 +9,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function PairScreen({navigation}){
-  
-  const onPressHandler = () => {
-    navigation.navigate("Habit List");
-  }
-
-  return (
-    <View style={styles.container}>
-      <Text>Pair Your Device</Text>
-      <Pressable onPress={onPressHandler}>
-        <Text>Go to Habit List Screen</Text>
-      </Pressable>
-    </View>
-
-  )
-}
-
 function HabitListScreen({navigation}){
   const onPressHandler = () => {
-    navigation.navigate("Splash");
+    navigation.navigate("Edit Habit");
   }
 
   return (
@@ -41,6 +24,23 @@ function HabitListScreen({navigation}){
   )
 }
 
+
+function EditHabitScreen({navigation}){
+  
+  const onPressHandler = () => {
+    navigation.navigate("Habit List");
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text>Edit your habit</Text>
+      <Pressable onPress={onPressHandler}>
+        <Text>Go to Habit List Screen</Text>
+      </Pressable>
+    </View>
+
+  )
+}
 
 export default function App() {
   /* const [Items, setItems] = useState([
@@ -79,20 +79,20 @@ export default function App() {
   );*/
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen 
-          name="Pair Device" 
-          component={PairScreen} 
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="Habit List" 
+          component={HabitListScreen} 
           options={{
             header: () => null
           }}
         />
 
-        <Tab.Screen 
-          name="Habit List" 
-          component={HabitListScreen} 
+        <Stack.Screen 
+          name="Edit Habit" 
+          component={EditHabitScreen} 
         />
-      </Tab.Navigator>
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }
