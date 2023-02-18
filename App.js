@@ -6,37 +6,65 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 function HabitListScreen({navigation}){
-  const onPressHandler = () => {
-    navigation.navigate("Edit Habit");
+  const [Habits, setHabits] = useState([
+    { id: 1, text: 'Meditate' },
+    { id: 2, text: 'Workout' },
+    { id: 3, text: 'Read' },
+    { id: 4, text: 'Code' },
+  ]);
+
+  const onPressHandler = (habitName, habitID) => {
+    navigation.navigate("Edit Habit", {habitName: "Meditation", habitID: 1});
   }
+
 
   return (
     <View style={styles.container}>
+       { 
+        Habits.map((item) => {
+          return (
+            <Button title= {item.text} onPress={ onPressHandler } key={item.id} style={styles.item}>
+                
+            </Button>
+            
+          )
+        })
+      } 
+      
       <Text>Habit List Screen</Text>
-      <Pressable> 
-        <Text>Go back Splash</Text>
+      <Pressable onPress={ onPressHandler }> 
+        <Text>Go to habit edit page</Text>
       </Pressable>
     </View>
   )
+
 }
 
 
-function EditHabitScreen({navigation}){
+function EditHabitScreen({navigation, route}){
   
+  const {habitName, habitID}  = route.params;
+
   const onPressHandler = () => {
     navigation.navigate("Habit List");
   }
 
   return (
     <View style={styles.container}>
+      
+
       <Text>Edit your habit</Text>
       <Pressable onPress={onPressHandler}>
         <Text>Go to Habit List Screen</Text>
       </Pressable>
+      <Text>Our Habit Name: {habitName} </Text>
+
     </View>
 
   )
@@ -114,6 +142,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 20,
     marginBottom: 20,
+  }, item:{
+    backgroundColor: 'pink',
   }
 });
 
