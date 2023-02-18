@@ -20,7 +20,7 @@ function HabitListScreen({navigation}){
   ]);
 
   const onPressHandler = (habitName, habitID) => {
-    navigation.navigate("Edit Habit", {habitName: "Meditation", habitID: 1});
+    navigation.navigate("Edit Habit", {habitName: habitName, habitID: habitID});
   }
 
 
@@ -29,7 +29,7 @@ function HabitListScreen({navigation}){
        { 
         Habits.map((item) => {
           return (
-            <Button title= {item.text} onPress={ onPressHandler } key={item.id} style={styles.item}>
+            <Button title= {item.text} onPress={ event => onPressHandler(item.text, item.id) } key={item.id} style={styles.item}>
                 
             </Button>
             
