@@ -7,8 +7,6 @@ import styles from '../styles'
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-
-
 import { useContext } from 'react';
 import { GlobalsContext } from '../globals';
 
@@ -48,11 +46,11 @@ export default function NewHabitScreen({navigation, route, habitsData}){
         navigation.navigate('Habit List');
     }
     return(
-        <View styles={styles.container}>
-            <Text>Habit Name</Text>
+        <View style={styles.container}>
+            <Text style={[styles.headings, styles.mediumPadding]}>Habit Name</Text>
             <TextInput
                 onChangeText={onChangeText}
-                value={text}
+                placeholder="Change name"
             />
             <Text>Select starting date:</Text>
             <Button title="Show Date Picker" onPress={handlePress} />
