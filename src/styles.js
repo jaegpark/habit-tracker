@@ -1,13 +1,16 @@
 import {StyleSheet} from 'react-native';
 
-
-
 export default StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
+      padding: 12,
+      marginTop: 12,
+      backgroundColor: '#ffffff',
+      flexDirection: 'column',
       justifyContent: 'center',
+      flex: 1,
+    },
+    textInput: {
+
     },
     input:{
       width:200,
@@ -19,14 +22,24 @@ export default StyleSheet.create({
       fontSize: 20,
       marginTop: 20,
       marginBottom: 20,
-    }, item:{
+    }, 
+    smallPadding:{
+      paddingVertical: 8
+    },
+    largePadding:{
+      paddingVertical: 16
+    },
+    item:{
       backgroundColor: 'pink',
-    }, headers:{
+    }, 
+    headers:{
       fontSize: 36,
       fontWeight: 'bold',
-    }, headings:{
+    }, 
+    headings:{
       fontSize: 24,
       fontWeight: 'bold',
     }
+
   });
   
