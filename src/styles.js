@@ -14,7 +14,7 @@ export default StyleSheet.create({
     },
     input:{
       width:350,
-      height:40,
+      height:35,
       borderWidth: 1,
       borderColor: 'black',
       borderRadius: 5,
@@ -37,8 +37,9 @@ export default StyleSheet.create({
       fontWeight: 'bold',
     }, 
     headings:{
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: 'bold',
+      marginTop: 10,
     },
     normal:{
         fontSize: 18,

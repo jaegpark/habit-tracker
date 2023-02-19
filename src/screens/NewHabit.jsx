@@ -23,13 +23,18 @@ export default function NewHabitScreen({navigation, route, habitsData}){
     // Frequency
     const [selectedFrequency, setSelectedFrequency] = useState('Option 1');
 
+    const [led, setLed] = useState('red');
     
+    const [showLEDPicker, setShowLEDPicker] = useState(false);
+
     const { listOfHabits, setHabits } = useContext(GlobalsContext);
 
     const handleSaveNewHabit = () => {
         // update the global state from GlobalsContext
         // add new habit to the list
-        const newhabit = {id: listOfHabits.length + 1, name: text, date: date, frequency: selectedFrequency, descriptor: desc};
+        const newhabit = {id: listOfHabits.length + 1, name: text, date: date, 
+            frequency: selectedFrequency, descriptor: desc, led_colour: led
+            };
         setHabits([...listOfHabits, newhabit]);
         // return back to the list
         backToList();
@@ -60,6 +65,7 @@ export default function NewHabitScreen({navigation, route, habitsData}){
             onChange={(event, selectedDate) => {
                 setDate(selectedDate || date);
             }}
+            style={ {height: 120}}
             />
 
             <Text style={styles.headings}>Repeat Every:</Text>
@@ -67,12 +73,29 @@ export default function NewHabitScreen({navigation, route, habitsData}){
                 selectedValue={selectedFrequency}
                 onValueChange={(itemValue, itemIndex) =>
                     setSelectedFrequency(itemValue)
-                }>
+                }
+                itemStyle={ {height: 120}}
+
+                
+                >
                 <Picker.Item label="Daily" value="daily" />
                 <Picker.Item label="Weekly" value="weekly" />
                 <Picker.Item label="Monthly" value="monthly" />
             </Picker>
+            <Text style={styles.headings}>Select LED:</Text>
             
+            {<Picker
+                selectedValue={led}
+                onValueChange={(itemValue, itemIndex) =>
+                    setLed(itemValue)
+                }
+                itemStyle={ {height: 120}}
+                >
+                <Picker.Item label="Red" value="R" />
+                <Picker.Item label="Green" value="G" />
+                <Picker.Item label="Blue" value="B" />
+            </Picker>}
+
             <Button title="SAVE" onPress={handleSaveNewHabit}/>
         </View>
     );

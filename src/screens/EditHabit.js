@@ -46,6 +46,12 @@ export default function EditHabitScreen({navigation, route}){
                 <Text key={habit.id} style={styles.normal}>Occurs {habit.frequency}.</Text>
               ))    
         }
+        {
+          listOfHabits.map( // description
+          (habit) => habit.name === habitName && (
+              <Text key={habit.id} style={styles.normal}>LED: {habit.led_colour}</Text>
+            ))
+        }
         
         {/* <TextInput  style={styles.input}
           placeholder="New Description" 
