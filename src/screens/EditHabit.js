@@ -14,16 +14,21 @@ import {GlobalsContext} from '../globals';
 export default function EditHabitScreen({navigation, route}){
   
     const {habitName, habitID}  = route.params;
-  
-    //const {Habits} = useSelector(state => state.Habits);
-    //const dispatch = useDispatch();
-  
+    
+    const { listOfHabits, setHabits } = useContext(GlobalsContext);
+    
     const onPressHandler = () => { 
       navigation.navigate("Habit List");
     }
     const deleteHabit = (habitName) => {
-      //dispatch(delHabit(habitName));
-      
+        // loop through listOfHabits and delete the habit with the name habitName
+        // setHabits to the new list
+        setHabits(listOfHabits.filter((item) => item.name !== habitName));
+        backToList();
+    }
+
+    const backToList = () =>{
+        navigation.navigate('Habit List');
     }
   
     return (
