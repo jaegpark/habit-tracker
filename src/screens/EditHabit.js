@@ -1,14 +1,14 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { Button, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-
+import {GlobalsContext} from '../globals';
 
 
 export default function EditHabitScreen({navigation, route}){

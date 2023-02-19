@@ -9,59 +9,38 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-//import { Provider } from "react-redux"
-//import { storee } from "../redux/reducers"
 
 import {NewHabitScreen} from "./NewHabit";
 
 import { EditHabitScreen } from "./EditHabit";
 
-//console.log("Store: ", Store);
 
-const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
-
+import { useContext } from 'react';
+import { GlobalsContext } from '../globals';
 
 export default function HabitListScreen( {navigation, route}){
-    //const Habits = useSelector(state => state.habitsListReducer);
-    //const dispatch = useDispatch();
 
-    /* const habits = useSelector(state => state.habitReducer.habits);
-    const dispatch = useDispatch();
+  const { listOfHabits, setHabits } = useContext(GlobalsContext);
 
-    const handleAddHabit = () => {
-      dispatch(addHabit({ id: Date.now(), name: `Habit ${habits.length + 1}` }));
-    };
+  
+  const onPressHandler = (habitName, habitID) => {
+      navigation.navigate("Edit Habit", {habitName: habitName, habitID: habitID});
+  }
 
-    const handleDeleteHabit = (id) => {
-      dispatch(deleteHabit(id));
-    }; */
+  const newHabitHandler = () => {
+      navigation.navigate("New Habit");
+  }
 
-    const [Habits, addHabit] = useState([
-    { id: 1, name: 'Meditate' },
-    { id: 2, name: 'Workout' },
-    { id: 3, name: 'Read' },
-    { id: 4, name: 'Code' },
-    ]); 
-    
-    const onPressHandler = (habitName, habitID) => {
-        navigation.navigate("Edit Habit", {habitName: habitName, habitID: habitID});
-    }
-
-    const newHabitHandler = () => {
-        navigation.navigate("New Habit");
-    }
-
-    return (
-    <View style={styles.container}>
-        <Text style={styles.headers}> Habits </Text>
-        { Habits.map((habit) => (
-        <Button title={habit.name} key={habit.id} onPress={() => onPressHandler(habit.name, habit.id)}>
-        </Button>
-      ))} 
-      <Button title="Add New Habit" onPress={() => newHabitHandler()}></Button>
-    </View>
-    )
+  return (
+  <View style={styles.container}>
+      <Text style={styles.headers}> Habits </Text>
+      { listOfHabits.map((habit) => (
+      <Button title={habit.name} key={habit.id} onPress={() => onPressHandler(habit.name, habit.id)}>
+      </Button>
+    ))} 
+    <Button title="Add New Habit" onPress={() => newHabitHandler()}></Button>
+  </View>
+  )
 }
 
 const styles = StyleSheet.create({
