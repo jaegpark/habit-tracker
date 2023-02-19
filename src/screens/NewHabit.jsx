@@ -7,8 +7,17 @@ import styles from '../styles'
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
+
+
+import { useContext } from 'react';
+import { GlobalsContext } from '../globals';
+
+
+
+
 export default function NewHabitScreen({navigation, route, habitsData}){
     // Habit name
+    
     const [text, onChangeText] = useState('Enter Habit Name (this is a text-field)');
     // Starting date
     const [date, setDate] = useState(new Date());
@@ -18,7 +27,23 @@ export default function NewHabitScreen({navigation, route, habitsData}){
     };
     // Frequency
     const [selectedFrequency, setSelectedFrequency] = useState('Option 1');
+
+    
+    const { listOfHabits, setHabits } = useContext(GlobalsContext);
+/* 
+    console.log('GlobalsContext:', GlobalsContext);
+    console.log('habits:', listOfHabits);
+    console.log('setHabits:', setHabits); */
     // Return back to list
+    const handleSaveNewHabit = () => {
+        // update the global state from GlobalsContext
+        // add new habit to the list
+        const newhabit = {id: listOfHabits.length + 1, name: text, date: date, frequency: selectedFrequency};
+        setHabits([...listOfHabits, newhabit]);
+        // return back to the list
+        backToList();
+    }
+
     const backToList = () =>{
         navigation.navigate('Habit List');
     }
@@ -52,7 +77,7 @@ export default function NewHabitScreen({navigation, route, habitsData}){
                 <Picker.Item label="Weekly" value="weekly" />
                 <Picker.Item label="Monthly" value="monthly" />
             </Picker>
-            <Button title="SAVE" onPress={backToList}/>
+            <Button title="SAVE" onPress={handleSaveNewHabit}/>
         </View>
     );
 }
