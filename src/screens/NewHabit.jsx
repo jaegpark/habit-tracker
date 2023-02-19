@@ -91,9 +91,9 @@ export default function NewHabitScreen({navigation, route, habitsData}){
                 }
                 itemStyle={ {height: 120}}
                 >
-                <Picker.Item label="Red" value="R" />
-                <Picker.Item label="Green" value="G" />
-                <Picker.Item label="Blue" value="B" />
+                <Picker.Item label="Red" value="Red" />
+                <Picker.Item label="Green" value="Green" />
+                <Picker.Item label="Blue" value="Blue" />
             </Picker>}
 
             <Button title="SAVE" onPress={handleSaveNewHabit}/>
