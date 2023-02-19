@@ -18,7 +18,7 @@ export default function EditHabitScreen({navigation, route}){
     //const {Habits} = useSelector(state => state.Habits);
     //const dispatch = useDispatch();
   
-    const onPressHandler = () => {
+    const onPressHandler = () => { 
       navigation.navigate("Habit List");
     }
     const deleteHabit = (habitName) => {
