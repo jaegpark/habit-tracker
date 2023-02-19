@@ -35,17 +35,12 @@ export default function App() {
           <Stack.Screen 
             name="Edit Habit" 
             component={EditHabitScreen} 
-            options={{
-              header: () => null
-            }}
           />
-
+          
           <Stack.Screen
           name = "New Habit"
           component={NewHabitScreen}
-          options={{
-              header: () => null
-            }}>
+          >
 
           </Stack.Screen>
         </Stack.Navigator>

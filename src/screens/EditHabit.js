@@ -10,7 +10,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {GlobalsContext} from '../globals';
 
-
 export default function EditHabitScreen({navigation, route}){
   
     const {habitName, habitID}  = route.params;
@@ -35,8 +34,19 @@ export default function EditHabitScreen({navigation, route}){
       <View style={styles.container}>
         
         <Text style={styles.headers}> {habitName} </Text>
-        <Text style={styles.headings}> Description</Text>
-        <Text>Meditate for at least 5 minutes every day.</Text>
+        {
+        listOfHabits.map( // description
+            (habit) => habit.name === habitName && (
+                <Text key={habit.id} style={styles.normal}>{habit.descriptor}</Text>
+              ))    
+        }
+        {
+        listOfHabits.map( // description
+            (habit) => habit.name === habitName && (
+                <Text key={habit.id} style={styles.normal}>Occurs {habit.frequency}.</Text>
+              ))    
+        }
+        
         {/* <TextInput  style={styles.input}
           placeholder="New Description" 
           //TODO : onChangeText= {(value) => setName(value)} // FOR NOW IT DELETES {dispatch(delHabit(habitName))} //
@@ -73,6 +83,9 @@ const styles = StyleSheet.create({
     }, headings:{
       fontSize: 24,
       fontWeight: 'bold',
+    }, normal:{
+        fontSize: 18,
+        fontWeight: 'normal',
     }
   });
   

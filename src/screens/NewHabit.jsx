@@ -16,27 +16,20 @@ import { GlobalsContext } from '../globals';
 export default function NewHabitScreen({navigation, route, habitsData}){
     // Habit name
     
-    const [text, onChangeText] = useState('Enter Habit Name (this is a text-field)');
+    const [text, onChangeText] = useState('Default Habit');
+    const [desc, onChangeDesc] = useState('Default Description');
     // Starting date
     const [date, setDate] = useState(new Date());
-    const [showPicker, setShowPicker] = useState(false);
-    const handlePress = () => {
-        setShowPicker(true);
-    };
     // Frequency
     const [selectedFrequency, setSelectedFrequency] = useState('Option 1');
 
     
     const { listOfHabits, setHabits } = useContext(GlobalsContext);
-/* 
-    console.log('GlobalsContext:', GlobalsContext);
-    console.log('habits:', listOfHabits);
-    console.log('setHabits:', setHabits); */
-    // Return back to list
+
     const handleSaveNewHabit = () => {
         // update the global state from GlobalsContext
         // add new habit to the list
-        const newhabit = {id: listOfHabits.length + 1, name: text, date: date, frequency: selectedFrequency};
+        const newhabit = {id: listOfHabits.length + 1, name: text, date: date, frequency: selectedFrequency, descriptor: desc};
         setHabits([...listOfHabits, newhabit]);
         // return back to the list
         backToList();
@@ -50,22 +43,26 @@ export default function NewHabitScreen({navigation, route, habitsData}){
             <Text style={[styles.headings, styles.mediumPadding]}>Habit Name</Text>
             <TextInput
                 onChangeText={onChangeText}
-                placeholder="Change name"
+                placeholder="Habit Name:"
+                style={styles.input}
             />
-            <Text>Select starting date:</Text>
-            <Button title="Show Date Picker" onPress={handlePress} />
-            {showPicker && (
-                <DateTimePicker
-                value={date}
-                mode={'date'}
-                display={Platform.OS === 'ios' ? 'spinner' : 'default'}
-                onChange={(event, selectedDate) => {
-                    setShowPicker(false);
-                    setDate(selectedDate || date);
-                }}
-                />
-            )}
-            <Text>Repeat every:</Text>
+            <TextInput
+                onChangeText={onChangeDesc}
+                placeholder="Description:"
+                style={styles.input}
+            />
+
+            <Text style={styles.headings}>Select Starting Date:</Text>
+            <DateTimePicker
+            value={date}
+            mode={'date'}
+            display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+            onChange={(event, selectedDate) => {
+                setDate(selectedDate || date);
+            }}
+            />
+
+            <Text style={styles.headings}>Repeat Every:</Text>
             <Picker
                 selectedValue={selectedFrequency}
                 onValueChange={(itemValue, itemIndex) =>
@@ -75,6 +72,7 @@ export default function NewHabitScreen({navigation, route, habitsData}){
                 <Picker.Item label="Weekly" value="weekly" />
                 <Picker.Item label="Monthly" value="monthly" />
             </Picker>
+            
             <Button title="SAVE" onPress={handleSaveNewHabit}/>
         </View>
     );

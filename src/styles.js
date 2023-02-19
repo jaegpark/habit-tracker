@@ -13,15 +13,15 @@ export default StyleSheet.create({
 
     },
     input:{
-      width:200,
+      width:350,
       height:40,
       borderWidth: 1,
       borderColor: 'black',
       borderRadius: 5,
       textAlign: 'center',
-      fontSize: 20,
-      marginTop: 20,
-      marginBottom: 20,
+      fontSize: 18,
+      marginTop: 5,
+      marginBottom: 5,
     }, 
     smallPadding:{
       paddingVertical: 8
@@ -39,6 +39,10 @@ export default StyleSheet.create({
     headings:{
       fontSize: 24,
       fontWeight: 'bold',
+    },
+    normal:{
+        fontSize: 18,
+        fontWeight: 'normal',
     }
 
   });
