@@ -3,16 +3,11 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import React, { useState } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { delHabit, addHabit } from '../redux/actions';
-
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-//import { Provider } from "react-redux"
-//import { storee } from "../redux/reducers"
 
 
 

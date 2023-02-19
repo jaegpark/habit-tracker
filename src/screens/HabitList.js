@@ -3,8 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import React, { useState } from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { delHabit, addHabit } from '../redux/actions';
 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,6 +11,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 //import { Provider } from "react-redux"
 //import { storee } from "../redux/reducers"
+
+import {NewHabitScreen} from "./NewHabit";
 
 import { EditHabitScreen } from "./EditHabit";
 
@@ -49,7 +49,7 @@ export default function HabitListScreen( {navigation, route}){
     }
 
     const newHabitHandler = () => {
-      Habits.push({id: Habits.length + 1, name: "New Habit"});
+        navigation.navigate("New Habit");
     }
 
     return (
