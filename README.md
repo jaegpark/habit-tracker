@@ -65,6 +65,9 @@ https://www.figma.com/proto/Tv1TLbwocjlg4sWj9fg8mS/Mobile-UI-kit-(Community)-(Co
 References
 
 [1] N. D’Aurizio, T. L. Baldi, G. Paolocci and D. Prattichizzo, "Preventing Undesired Face-Touches With Wearable Devices and Haptic Feedback," in IEEE Access, vol. 8, pp. 139033-139043, 2020, doi: 10.1109/ACCESS.2020.3012309.
+
 [2] Peng W, Li L, Kononova A, Cotten S, Kamp K, Bowen M. Habit Formation in Wearable Activity Tracker Use Among Older Adults: Qualitative Study. JMIR Mhealth Uhealth 2021;9(1):e22488. URL: https://mhealth.jmir.org/2021/1/e22488. DOI: 10.2196/22488
+
 [3] Prestwich, A., Perugini, M., Hurling, R., & Richens, Y. (2009). Using theory to develop and test interventions to promote changes in health behaviour: Evidence, issues, and recommendations. Current Opinion in Psychiatry, 22(3), 194-201. https://doi.org/10.1016/j.copsyc.2009.02.007
+
 [4] Lally, P., van Jaarsveld, C. H., Potts, H. W., & Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. European Journal of Social Psychology, 40(6), 998-1009. https://doi.org/10.1002/ejsp.674
