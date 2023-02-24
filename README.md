@@ -1,6 +1,7 @@
 # Introduction
 Habit. A bite size technology to help you build good habits.
-Made for MakeUofT 2023 by  Kyrylo Kalashnikov, Jae Gwan Park, Richard Hanxu, Ammar Vora
+
+Made for MakeUofT 2023 by Kyrylo Kalashnikov, Jae Gwan Park, Richard Hanxu, Ammar Vora
 
 ## A short description
 
