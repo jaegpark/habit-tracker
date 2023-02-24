@@ -10,7 +10,10 @@ Introducing our new Smart Habit Tracker for developing habits! Our app allows yo
 # Project Story
 
 ## Inspiration
-[](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/182/datas/original.png)
+
+https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/182/datas/original.png
+
+[image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/182/datas/original.png)
 
 With the increasing number of distractions in our world, it has become harder to develop strong personal habits. Task planners and productivity apps only help momentarily[1] before being drowned out by online distractions, and seeing yourself fall further behind just compounds the downward spiral. 
 
