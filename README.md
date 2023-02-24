@@ -10,22 +10,27 @@ Introducing our new Smart Habit Tracker for developing habits! Our app allows yo
 # Project Story
 
 ## Inspiration
-
-https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/182/datas/original.png
-
-[image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/182/datas/original.png)
+  
+![image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/182/datas/original.png)
 
 With the increasing number of distractions in our world, it has become harder to develop strong personal habits. Task planners and productivity apps only help momentarily[1] before being drowned out by online distractions, and seeing yourself fall further behind just compounds the downward spiral. 
 
 There is a desperate need for a solution to the “productivity” crisis, and we believe our product, “Habit”, is the answer. We were inspired to create a device to enhance the long-term focus of the user by over 40% by introducing haptic cues [2]. Research has shown that people who received text messages reminding them to perform a new habit were more successful when the text message included a physical cue, such as a specific location or object, compared to a non-specific reminder [3].
 
+![](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/193/datas/original.png)
+
 ## What it does
 Habit is a wearable device that can connect via Bluetooth to your phone, where you can set habit timers in the accompanying app. When it's time to complete a habit, the device will remind you with visual, auditory, and haptic cues. These sensory combinations better motivate Habit users to tackle the task, not forget, avoid phone distractions, and to build and maintain desired habits. 
+
+![](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/199/datas/original.png)
 
 ## How we built it
 Our team worked rapidly and cohesively to develop the hardware, software, and IoT of the product. For hardware, we used an Arduino Uno and a HC-06 Bluetooth module, along with 3 LEDs, a button, and a buzzer in the design of the physical wearable for the user. The chassis was planned in Fusion 360 and constructed with 3D polymer printing. The team carefully came up with a step-by-step plan to build the circuitry in an “agile” fashion, integrating parts together as we went along.
 
+![](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/214/datas/original.JPG)
+
 Using mockups and user flow models as a guide, we designed a working app in React-Native that served as a proof of concept of the software accompanying our physical product. This proof of concept is viable on both Android and IOS systems. We also 3D-printed a “commercial” version for the wearable chassis that highlights the final vision and size of the product.
+![final product](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/391/471/datas/original.JPG)
 
 ## Challenges we ran into
 - iPhone not connecting to hc-06 Bluetooth sensor due to IOS16 privacy and existing react-native library.
